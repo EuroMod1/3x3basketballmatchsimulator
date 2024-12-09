@@ -113,23 +113,27 @@ h1 {
 }
 
 
-    .team {
-        font-size: 10px;
-        flex: 1;
-        margin: 0 20px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        top: 100px;
-    }
+.team {
+    font-size: 10px;
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    top: 100px;
+}
 
-    .team-name {
-        font-size: 10px;
-        top: 50px;
-        color: white; /* Set team names to white */
-    }
+.team-name {
+    font-size: 10px;
+    top: 50px;
+    color: white; /* Set team names to white */
+    white-space: nowrap; /* Prevent line breaks and ensure it stays on one line */
+    overflow: hidden; /* Optionally hide any overflow text */
+    text-overflow: ellipsis; /* Optionally add ellipsis if text overflows */
+}
+
 
     .team-flag {
         width: 50px;
