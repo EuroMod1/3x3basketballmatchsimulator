@@ -15,9 +15,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column; /* Align items vertically */
-        height: 100vh; /* Full viewport height */
-        margin: 0; /* Remove default body margins */
+        height: 100vh;
+        margin: 10px;
     }
 
 
@@ -70,23 +69,24 @@ h1 {
     .container {
         text-align: center;
         background-color: #121720;
-        padding: 40px;
+        padding: 200px;
         border-radius: 0px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        color: white;
-        width: 80%;
-        max-height: 1500px;
-        max-width: 500px;
-        margin: 20px 0; /* Space both above and below the container */
+        color: white; /* Set text color to white */
     }
 
-    .scoreboard {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-        margin-bottom: 20px;
+    h1, h2, .score, .possession, .clock, .controls, .stats-box h2, .stat-label, .fouls-indicator {
+        color: white; /* Ensure all text inside container is white */
     }
+
+.scoreboard {
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-between; /* Space out team flags and title */
+    align-items: center; /* Align items vertically in the center */
+    Margin-top: 100px;
+    margin-bottom: 20px; /* Space below the scoreboard */
+    position: relative;
+}
 
 .title-container {
     text-align: center; /* Ensure title is centered */
