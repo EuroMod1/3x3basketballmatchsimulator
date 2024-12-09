@@ -113,52 +113,23 @@ h1 {
 }
 
 
-.team {
-    font-size: 10px;
-    flex: 1;
-    margin: 0 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    top: 100px;
-    /* Ensuring that the layout is flexible on smaller screens */
-    max-width: 100%;
-}
-
-.team-name {
-    font-size: 10px;
-    top: 50px;
-    color: white; /* Set team names to white */
-    white-space: nowrap; /* Keep the text on one line */
-    overflow: hidden; /* Hide any overflow text */
-    text-overflow: ellipsis; /* Optional: show ellipsis for overflowed text */
-    padding: 0 10px; /* Optional: add padding for a better visual */
-}
-
-/* Mobile-first approach with media queries */
-@media (max-width: 768px) {
     .team {
-        font-size: 8px; /* Decrease the font size on smaller screens */
-        top: 50px; /* Adjust positioning for smaller screens */
+        font-size: 10px;
+        flex: 1;
+        margin: 0 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        top: 100px;
     }
 
     .team-name {
-        font-size: 12px; /* Increase the font size for readability on smaller screens */
-        white-space: normal; /* Allow text wrapping if needed on mobile */
-        word-wrap: break-word; /* Ensure that the text wraps properly on smaller screens */
-        padding: 0 5px; /* Add smaller padding on mobile */
+        font-size: 10px;
+        top: 50px;
+        color: white; /* Set team names to white */
     }
-}
-
-@media (max-width: 480px) {
-    .team-name {
-        font-size: 14px; /* Increase the font size slightly on very small screens */
-        padding: 0 5px; /* Adjust padding for tiny screens */
-    }
-}
-
 
 
     .team-flag {
