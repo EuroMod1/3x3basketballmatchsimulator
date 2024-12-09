@@ -15,8 +15,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        margin: 10px;
+        flex-direction: column; /* Align items vertically */
+        height: 100vh; /* Full viewport height */
+        margin: 0; /* Remove default body margins */
     }
 
 
@@ -66,37 +67,25 @@ h1 {
     margin-top: 20px; /* Add spacing from the top of the screen */
 }
 
-
-
-
-
-.container {
-    text-align: center;
-    background-color: #121720;
-    padding: 40px; /* Reduce padding to make the container smaller */
-    border-radius: 0px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: white;
-    width: 80%; /* Optionally, limit the width */
-    max-width: 500px; /* Optionally, set a max-width to avoid it becoming too wide */
-    height: auto; /* Allow the container height to adjust automatically */
-    margin-top: 20px; /* Space on top of the scoreboard */
-    margin-bottom: 10px; /* Space below the scoreboard */
-}
-
-
-    h1, h2, .score, .possession, .clock, .controls, .stats-box h2, .stat-label, .fouls-indicator {
-        color: white; /* Ensure all text inside container is white */
+    .container {
+        text-align: center;
+        background-color: #121720;
+        padding: 40px;
+        border-radius: 0px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        color: white;
+        width: 80%;
+        max-width: 500px;
+        margin: 20px 0; /* Space both above and below the container */
     }
 
-.scoreboard {
-    display: flex; /* Use flexbox to align items horizontally */
-    justify-content: space-between; /* Space out team flags and title */
-    align-items: center; /* Align items vertically in the center */
-    Margin-top: 50px;
-    margin-bottom: 20px; /* Space below the scoreboard */
-    position: relative;
-}
+    .scoreboard {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
 .title-container {
     text-align: center; /* Ensure title is centered */
