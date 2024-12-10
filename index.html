@@ -9,269 +9,313 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <style>
-body {
-    font-family: "Space Grotesk", sans-serif;
-    background: linear-gradient(90deg, #1B1B22, #E17365, #E17365, #1B1B22);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0px;
-}
+    body {
+        font-family: "Space Grotesk", sans-serif;
+        background: linear-gradient(90deg, #1B1B22, #E17365, #E17365, #1B1B22);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 10px;
+    }
 
-.container {
-    text-align: center;
-    background-color: #121720;
-    padding: 40px;
-    border-radius: 0px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
-}
-
-.title-wrapper {
-    display: inline-block;
-    padding: 5px;
-    border: 2px solid transparent;
-    background-image: linear-gradient(45deg, #ff6a00, #ffcc00);
-    -webkit-background-clip: border-box;
-    border-radius: 8px;
-}
 
 .title-large {
-    font-size: 30px;
-    font-weight: regular;
-    display: block;
-    color: #FFF;
-    -webkit-background-clip: text;
+    font-size: 50px; /* Larger font for "3x3" */
+    font-weight: regular; /* Bold for emphasis */
+    display: block; /* Ensure it appears on its own line */
+    color: #FFF; /* Set the text color to #2E333B */
+    -webkit-background-clip: text; /* Clip the background to the text */
 }
 
 .title-small {
-    font-size: 10px;
-    font-weight: normal;
-    display: block;
-    margin-top: -20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #FFF;
-    -webkit-background-clip: text;
+    font-size: 16px; /* Smaller font for "SIMULATOR" */
+    font-weight: normal; /* Optional: normal weight for contrast */
+    display: block; /* Ensure it appears below "3x3" */
+    margin-top: -40px; /* Reduce the spacing between the lines */
+    text-transform: uppercase; /* Optional: make it uppercase */
+    letter-spacing: 1px; /* Optional: adds spacing between letters */
+    color: #FFF; /* Set the text color to #2E333B */
+    -webkit-background-clip: text; /* Clip the background to the text */
 }
 
 h1 {
-    text-align: center;
-    color: #2E333B;
-    line-height: 1;
-    margin-top: 0px;
+    text-align: center; /* Center the title */
+    color: #2E333B; /* Set the text color to #2E333B */
+    line-height: 1; /* Tighter spacing */
+    margin-top: 20px; /* Add spacing from the top of the screen */
 }
 
+
+
+
+
+
+    .container {
+        text-align: center;
+        background-color: #121720;
+        padding: 200px;
+        border-radius: 0px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        color: white; /* Set text color to white */
+    }
+
+    h1, h2, .score, .possession, .clock, .controls, .stats-box h2, .stat-label, .fouls-indicator {
+        color: white; /* Ensure all text inside container is white */
+    }
+
 .scoreboard {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-between; /* Space out team flags and title */
+    align-items: center; /* Align items vertically in the center */
+    Margin-top: 100px;
+    margin-bottom: 20px; /* Space below the scoreboard */
     position: relative;
 }
 
 .title-container {
-    text-align: center;
-    flex: 1;
+    text-align: center; /* Ensure title is centered */
+    flex: 1; /* Make the title occupy the space between the flags */
 }
 
 .team {
     text-align: center;
-    font-size: 10px;
-    flex: 1;
-    margin: 0 10px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    top: 50px;
-}
-
-.team-name {
-    font-size: 8px;
-    top: 30px;
-    color: white;
 }
 
 .team-flag {
-    width: 30px;
+    width: 60px; /* Flag size */
     height: auto;
-    position: absolute;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
     border-radius: 0px;
-    top: -30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+
+    .team {
+        font-size: 12px;
+        flex: 1;
+        margin: 0 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        top: 100px;
+    }
+
+    .team-name {
+        font-size: 12px;
+        top: 50px;
+        color: white; /* Set team names to white */
+    }
+
+    .team-flag {
+        width: 60px;
+        height: auto;
+        position: absolute;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 0px;
+        top: -50px;
+    }
+
 .score {
-    font-size: 32px;
+    font-size: 60px;
     font-weight: bold;
-    display: inline-block;
-    transition: transform 0.5s ease-in-out;
+    display: inline-block; /* Ensure it behaves as a block so we can animate it */
+    transition: transform 0.5s ease-in-out; /* Smooth scaling */
     background: #fff;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; /* Clips the background to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text fill transparent, showing only the gradient */
     text-align: center;
 }
 
-.possession {
-    position: absolute;
-    top: -60px;
-    font-size: 16px;
-    display: none;
-}
 
-.possession.active {
-    display: inline;
-}
 
-.fouls-indicator {
-    align: center;
-    background-color: #fff;
-    width: 15px;
-    height: 15px;
-    color: #121720;
-    padding: 3px;
-    border-radius: 0px;
-    font-size: 8px;
-    margin-top: 5px;
-}
+    .possession {
+        position: absolute;
+        top: -90px;
+        font-size: 24px;
+        display: none;
+    }
+
+    .possession.active {
+        display: inline;
+    }
+
+    .fouls-indicator {
+        align: center;
+        background-color: #fff; /* Match container background */
+        width: 20px;
+        height: 20px;
+        color: #121720;
+        padding: 5px 5px;
+        border-radius: 0px;
+        font-size: 16px;
+        font-weight: regular;
+        margin-top: 10px;
+    }
 
 .clock {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin-bottom: 30px;
     font-weight: regular;
-    padding: 8px;
-    border: 1px solid white;
+    padding: 10px;
+    border: 2px solid white; /* Set clock border to white */
     display: inline-block;
-    background-color: #121720;
+    background-color: #121720; /* Match container background */
     border-radius: 0px;
-    margin-top: 10px;
-    color: white;
+    margin-top: 20px;
+    color: white; /* Ensure the text is white */
+}
+
+.clock .material-icons {
+    font-size: 18px; /* Make icon size small */
+    vertical-align: middle; /* Align the icon with the text */
+    margin-right: 8px; /* Space between the icon and text */
 }
 
 #timerText {
-    font-size: 16px;
+    font-size: 40px; /* Slightly smaller font for the time */
 }
 
-.controls {
-    font-size: 10px;
-    margin-top: 10px;
-}
 
-.controls .scoring {
-    font-weight: bold;
-}
+    .shot-clock {
+        font-size: 16px;
+    }
 
-select {
-    font-size: 10px;
-    padding: 3px;
-    margin-bottom: 5px;
-    color: white;
-    background-color: #121720;
-    border: 1px solid white;
-}
+    .controls {
+        font-size: 14px;
+        margin-top: 20px;
+    }
 
-button {
-    padding: 10px 15px;
-    font-size: 10px;
-    cursor: pointer;
-    margin-top: 5px;
-    color: white;
-    background-color: #121720;
-    border: 1px solid white;
-}
+    .controls .scoring {
+        font-weight: bold;
+    }
+
+    select {
+        font-size: 16px;
+        padding: 5px;
+        margin-bottom: 10px;
+        color: white;
+        background-color: #121720; /* Match container background */
+        border: 1px solid white; /* Add white border */
+    }
+
+    button {
+        padding: 20px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        color: white;
+        background-color: #121720; /* Match container background */
+        border: 1px solid white; /* Add white border */
+    }
 
 .button:hover {
-    background-color: white;
-    color: #121720;
+    background-color: white; /* White background on hover */
+    color: #121720; /* Dark text color for contrast */
 }
 
 .refresh-button {
-    padding: 5px 10px;
-    font-size: 10px;
+    padding: 10px 20px;
+    font-size: 12px;
     font-weight: bold;
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    border-radius: 0px;
-    cursor: pointer;
-    margin-bottom: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: transparent; /* Transparent background */
+    color: white; /* White text */
+    border: 2px solid white; /* Thin white border */
+    border-radius: 0px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-bottom: 5px; /* Space below the button */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text */
 }
 
 .refresh-button:hover {
-    background-color: white;
-    color: #121720;
+    background-color: white; /* White background on hover */
+    color: #121720; /* Dark text color for contrast */
 }
 
-.stats-box {
-    background-color: #121720;
-    border: none;
-    border-radius: 0px;
-    padding: 10px;
-    text-align: center;
-    margin: 10px auto;
-    width: 300px;
-    height: 200px;
-    box-sizing: border-box;
-    color: white;
+
+    .stats-box {
+        background-color: #121720; /* Match container background */
+        border: none;
+        border-radius: 0px;
+        padding: 15px;
+        text-align: center;
+        margin: 20px auto;
+        width: 500px;
+        height: 350px;
+        box-sizing: border-box;
+        color: white; /* Set text color to white */
+    }
+
+    .team-stats {
+        width: 100%;
+    }
+
+    .team-stat {
+        margin-bottom: 15px;
+    }
+
+    .stat-label {
+        margin-bottom: 3px;
+    }
+
+    .stat-bar-container {
+        display: flex;
+        position: relative;
+        height: 20px;
+        width: 100%;
+        background-color: lightgray;
+        overflow: hidden;
+        border-radius: 0px;
+    }
+
+    .stat-bar {
+        height: 100%;
+        font-size: 16px;
+        color: #fff;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        min-width: 20px;
+        text-align: left;
+        padding-left: 3px;
+        flex-grow: 1;
+        transition: width 0.5s ease-in-out;
+    }
+
+    .team-a-bar {
+        background-color: #F0FF5E;
+        text-align: left;
+        padding-left: 2px;
+    }
+
+    .team-b-bar {
+        background-color: #94FFDA;
+        text-align: right;
+        padding-right: 2px;
+    }
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5); /* Scales up to 1.5x its normal size */
+    }
+    100% {
+        transform: scale(1); /* Returns to the normal size */
+    }
 }
 
-.team-stats {
-    width: 100%;
+.score {
+    font-size: 60px;
+    font-weight: bold;
+    display: inline-block; /* Ensure it behaves as a block so we can animate it */
+    transition: transform 0.5s ease-in-out; /* Smooth scaling */
 }
 
-.team-stat {
-    margin-bottom: 10px;
-}
-
-.stat-label {
-    margin-bottom: 2px;
-}
-
-.stat-bar-container {
-    display: flex;
-    position: relative;
-    height: 15px;
-    width: 100%;
-    background-color: lightgray;
-    overflow: hidden;
-    border-radius: 0px;
-}
-
-.stat-bar {
-    height: 100%;
-    font-size: 10px;
-    color: #fff;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    min-width: 15px;
-    text-align: left;
-    padding-left: 2px;
-    flex-grow: 1;
-    transition: width 0.5s ease-in-out;
-}
-
-.team-a-bar {
-    background-color: #F0FF5E;
-    text-align: left;
-    padding-left: 2px;
-}
-
-.team-b-bar {
-    background-color: #94FFDA;
-    text-align: right;
-    padding-right: 2px;
-}
-
+/* Add the animation when the score changes */
 .score.scale-up {
-    animation: scaleUp 0.5s ease-in-out;
+    animation: scaleUp 0.5s ease-in-out; /* Apply the animation */
 }
-
 
 </style>
 </head>
@@ -565,7 +609,7 @@ button {
                 'Albania': 'https://flagicons.lipis.dev/flags/4x3/al.svg',
                 'Kosovo': 'https://fiba3x3.com/flags/4x3/ks.svg',
                 'Malta': 'https://fiba3x3.com/flags/4x3/mt.svg',
-                'Armenia': 'http://www.w3.org/2000/svg',
+                'Armenia': 'https://fiba3x3.com/flags/4x3/am.svg',
             };
 
             return flags[teamName] || ''; // Return an empty string if no flag is found
