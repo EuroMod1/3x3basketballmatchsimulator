@@ -800,18 +800,19 @@ h1 {
             const totalFreeThrows = statsA.freeThrows + statsB.freeThrows;
             const totalConvertedFreeThrows = statsA.convertedFreeThrows + statsB.convertedFreeThrows;
 
-const primaryColorGradient = 'linear-gradient(to right, #2E333B, #5A6270)';
-const secondaryColorGradient = 'linear-gradient(to left, #3B434B, #21272F)';
+const primaryColor = '#808080';  // Gray color
+const secondaryColor = '#D3D3D3';  // Light gray color
 
 function setBarColors(barA, barB, valueA, valueB) {
     if (valueA >= valueB) {
-        barA.style.background = primaryColorGradient;  // Apply gradient as background
-        barB.style.background = secondaryColorGradient;  // Apply gradient as background
+        barA.style.background = primaryColor;  // Apply gray as background
+        barB.style.background = secondaryColor;  // Apply light gray as background
     } else {
-        barA.style.background = secondaryColorGradient;  // Apply gradient as background
-        barB.style.background = primaryColorGradient;  // Apply gradient as background
+        barA.style.background = secondaryColor;  // Apply light gray as background
+        barB.style.background = primaryColor;  // Apply gray as background
     }
 }
+
 
 
             function updateBars(statA, statB, barA, barB, total) {
