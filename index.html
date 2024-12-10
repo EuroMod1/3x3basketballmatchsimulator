@@ -317,6 +317,123 @@ h1 {
     animation: scaleUp 0.5s ease-in-out; /* Apply the animation */
 }
 
+/* Base styles remain as is, with adjustments for mobile devices below */
+
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        font-size: 14px; /* Adjust the base font size */
+        height: 100%; /* Ensure full height on smaller screens */
+    }
+
+    .title-large {
+        font-size: 30px; /* Scale down title size */
+    }
+
+    .title-small {
+        font-size: 12px;
+        margin-top: -20px; /* Adjust spacing */
+    }
+
+    .container {
+        padding: 100px 20px; /* Reduce padding for mobile */
+    }
+
+    .scoreboard {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center-align items */
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .team {
+        font-size: 10px; /* Reduce team text size */
+        margin: 10px 0; /* Adjust margin */
+        top: auto; /* Allow natural flow */
+    }
+
+    .team-flag {
+        width: 40px; /* Reduce flag size */
+        top: -30px; /* Adjust positioning */
+    }
+
+    .score {
+        font-size: 40px; /* Scale down score size */
+    }
+
+    .possession {
+        font-size: 16px; /* Scale down possession indicator */
+        top: -60px; /* Adjust positioning */
+    }
+
+    .clock {
+        font-size: 20px; /* Reduce clock font size */
+        padding: 8px; /* Adjust padding */
+        margin-top: 10px;
+    }
+
+    .controls {
+        font-size: 12px; /* Adjust controls text size */
+    }
+
+    button {
+        padding: 15px 20px; /* Adjust button padding */
+        font-size: 14px; /* Scale down button font size */
+    }
+
+    .stats-box {
+        width: 100%; /* Make stats box fit smaller screens */
+        height: auto; /* Adjust height */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .stat-bar-container {
+        height: 15px; /* Reduce height of stat bars */
+    }
+
+    .stat-bar {
+        font-size: 12px; /* Reduce font size in stat bars */
+    }
+
+    select {
+        font-size: 14px; /* Reduce font size for dropdowns */
+        padding: 4px; /* Adjust padding */
+    }
+
+    .refresh-button {
+        font-size: 10px; /* Reduce button font size */
+        padding: 8px 15px; /* Adjust padding */
+    }
+}
+
+/* For ultra-small screens (e.g., 480px width) */
+@media only screen and (max-width: 480px) {
+    .title-large {
+        font-size: 24px; /* Further scale down title */
+    }
+
+    .title-small {
+        font-size: 10px; /* Further scale down subtitle */
+    }
+
+    .score {
+        font-size: 30px; /* Scale down score size */
+    }
+
+    .clock {
+        font-size: 16px; /* Reduce clock font size */
+    }
+
+    .controls {
+        font-size: 10px; /* Adjust controls text size */
+    }
+
+    .refresh-button {
+        font-size: 8px; /* Reduce button font size further */
+        padding: 5px 10px; /* Adjust padding */
+    }
+}
+
 </style>
 </head>
 
