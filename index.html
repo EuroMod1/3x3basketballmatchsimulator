@@ -340,21 +340,24 @@ h1 {
     }
 
     .scoreboard {
-        flex-direction: column; /* Stack elements vertically */
+        display: flex; /* Ensure it stays horizontal */
+        justify-content: space-between; /* Keep spacing */
         align-items: center; /* Center-align items */
-        margin-top: 50px;
+        margin-top: 50px; /* Adjust spacing */
         margin-bottom: 20px;
+        padding: 0 10px; /* Add padding for smaller screens */
     }
 
     .team {
-        font-size: 10px; /* Reduce team text size */
-        margin: 10px 0; /* Adjust margin */
-        top: auto; /* Allow natural flow */
+        font-size: 10px; /* Scale down font size */
+        margin: 0 10px; /* Reduce spacing between teams */
+        top: auto; /* Remove position adjustments */
     }
 
     .team-flag {
-        width: 40px; /* Reduce flag size */
-        top: -30px; /* Adjust positioning */
+        width: 40px; /* Reduce size of flags */
+        height: auto; /* Maintain aspect ratio */
+        top: auto; /* Reset positioning */
     }
 
     .score {
@@ -363,8 +366,9 @@ h1 {
 
     .possession {
         font-size: 16px; /* Scale down possession indicator */
-        top: -60px; /* Adjust positioning */
+        top: auto; /* Reset position */
     }
+}
 
     .clock {
         font-size: 20px; /* Reduce clock font size */
