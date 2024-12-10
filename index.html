@@ -46,11 +46,6 @@ h1 {
     margin-top: 20px; /* Add spacing from the top of the screen */
 }
 
-
-
-
-
-
     .container {
         text-align: center;
         background-color: #121720;
@@ -293,36 +288,173 @@ h1 {
         padding-right: 2px;
     }
 
-@keyframes scaleUp {
-    0% {
-        transform: scale(1);
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
     }
-    50% {
-        transform: scale(1.5); /* Scales up to 1.5x its normal size */
+
+    .title-large {
+        font-size: 35px;
     }
-    100% {
-        transform: scale(1); /* Returns to the normal size */
+
+    .title-small {
+        font-size: 12px;
+        margin-top: -20px;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .team {
+        font-size: 10px;
+        margin-bottom: 10px;
+        top: 0;
+    }
+
+    .team-name {
+        font-size: 10px;
+    }
+
+    .team-flag {
+        width: 50px;
+        height: auto;
+        top: -30px;
+    }
+
+    .score {
+        font-size: 45px;
+    }
+
+    .clock {
+        font-size: 24px;
+        padding: 5px;
+    }
+
+    .possession {
+        font-size: 18px;
+        top: -70px;
+    }
+
+    .fouls-indicator {
+        font-size: 12px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    .stats-box {
+        width: 100%;
+        padding: 10px;
+        height: auto;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+
+    .stat-bar-container {
+        height: 15px;
+    }
+
+    .stat-bar {
+        font-size: 14px;
+    }
+
+    select, button, .refresh-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .controls {
+        font-size: 12px;
+        margin-top: 10px;
     }
 }
 
-.score {
-    font-size: 60px;
-    font-weight: bold;
-    display: inline-block; /* Ensure it behaves as a block so we can animate it */
-    transition: transform 0.5s ease-in-out; /* Smooth scaling */
+/* Mobile Adjustment for smaller screens */
+@media (max-width: 480px) {
+    .title-large {
+        font-size: 28px;
+    }
+
+    .title-small {
+        font-size: 10px;
+        margin-top: -10px;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .team {
+        font-size: 8px;
+        margin: 0;
+    }
+
+    .team-flag {
+        width: 40px;
+        top: -20px;
+    }
+
+    .score {
+        font-size: 30px;
+    }
+
+    .clock {
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    .possession {
+        font-size: 16px;
+        top: -50px;
+    }
+
+    .fouls-indicator {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .stats-box {
+        width: 100%;
+        padding: 5px;
+        height: auto;
+    }
+
+    .stat-label {
+        font-size: 10px;
+    }
+
+    .stat-bar-container {
+        height: 10px;
+    }
+
+    .stat-bar {
+        font-size: 12px;
+    }
+
+    select, button, .refresh-button {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .controls {
+        font-size: 10px;
+        margin-top: 5px;
+    }
 }
 
-/* Add the animation when the score changes */
-.score.scale-up {
-    animation: scaleUp 0.5s ease-in-out; /* Apply the animation */
-}
 
 </style>
 </head>
 
 <body>
     <div class="container">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
 
 
         
