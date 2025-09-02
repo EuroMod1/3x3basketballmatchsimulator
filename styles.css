@@ -1,0 +1,221 @@
+/* ===============================
+   Vriesual — Portfolio Theme
+   Modern, elegant, responsive
+   =============================== */
+:root{
+  --bg:#0f1115;
+  --panel:#12151c;
+  --card:#171b22;
+  --muted:#9aa4b2;
+  --text:#e7ecf3;
+  --accent:#7c3aed; /* royal purple */
+  --accent-2:#22d3ee; /* cyan pop */
+  --ring: hsla(263, 86%, 58%, 0.4);
+  --radius:22px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.02);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(124,58,237,.15), transparent 60%),
+              radial-gradient(1000px 600px at -10% 10%, rgba(34,211,238,.12), transparent 55%),
+              var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* Container */
+.container{width:min(1100px, 92%); margin-inline:auto}
+
+/* Header / Nav */
+.header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background: color-mix(in oklab, var(--panel) 80%, transparent);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text);
+  font-weight:700; letter-spacing:.3px;
+}
+.brand .logo{
+  width:36px; height:36px; border-radius:14px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 6px 16px rgba(124,58,237,.35), inset 0 1px 0 rgba(255,255,255,.2);
+  font-weight:800;
+}
+/* Menu */
+.menu{display:flex; gap:18px; align-items:center}
+.menu a{
+  color:var(--text); text-decoration:none; padding:8px 12px; border-radius:12px;
+  opacity:.85;
+}
+.menu a:hover{ background:rgba(255,255,255,.05); opacity:1}
+/* Dropdown (modern, sleek) */
+.dropdown{ position:relative}
+.dropdown-toggle{
+  display:flex; align-items:center; gap:8px; cursor:pointer;
+  padding:8px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.06);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow: var(--shadow);
+}
+.chev{transition:transform .25s ease}
+.dropdown[aria-expanded="true"] .chev{ transform:rotate(180deg)}
+.dropdown-menu{
+  position:absolute; right:0; top:calc(100% + 10px);
+  min-width:240px; padding:10px;
+  background: color-mix(in oklab, var(--card) 95%, black);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:18px; box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  display:none;
+}
+.dropdown[aria-expanded="true"] .dropdown-menu{ display:block; animation: pop .18s ease}
+.dropdown-item{
+  display:flex; gap:10px; align-items:flex-start; padding:10px; border-radius:12px; text-decoration:none; color:var(--text);
+}
+.dropdown-item:hover{ background:rgba(255,255,255,.05)}
+.dropdown-item small{ color:var(--muted)}
+
+@keyframes pop{ from{ transform:translateY(-4px); opacity:0} to{ transform:none; opacity:1}}
+
+/* Hero */
+.hero{
+  padding:72px 0 30px;
+}
+.badge{
+  display:inline-flex; gap:8px; align-items:center; padding:6px 12px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.08);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow: var(--shadow);
+  font-size:14px; color:var(--muted)
+}
+.gradient{
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero h1{ font-size: clamp(32px, 6vw, 56px); line-height:1.1; margin:14px 0 10px}
+.hero p{ color:var(--muted); font-size:clamp(16px, 2.2vw, 18px); max-width:60ch}
+
+/* CTA */
+.cta{ display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+.btn{
+  appearance:none; border:none; cursor:pointer; text-decoration:none;
+  padding:12px 16px; border-radius:14px; font-weight:600; color:var(--text);
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 10px 24px rgba(124,58,237,.35);
+}
+.btn.ghost{
+  background:transparent; border:1px solid rgba(255,255,255,.12);
+  box-shadow:none; color:var(--text)
+}
+.btn:focus{ outline:3px solid var(--ring); outline-offset:2px}
+
+/* Sections */
+.section{ padding:48px 0}
+.section h2{ font-size: clamp(24px, 4.5vw, 36px); margin:0 0 18px}
+.section .lead{ color:var(--muted); margin-bottom:26px}
+
+/* Cards Grid */
+.grid{ display:grid; gap:18px}
+.grid-3{ grid-template-columns: repeat(3, minmax(0, 1fr))}
+.grid-2{ grid-template-columns: repeat(2, minmax(0, 1fr))}
+@media (max-width: 900px){ .grid-3{ grid-template-columns: 1fr 1fr} }
+@media (max-width: 640px){ .grid-3, .grid-2{ grid-template-columns: 1fr} }
+
+.card{
+  background: var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding:18px;
+  box-shadow: var(--shadow);
+}
+
+/* Services */
+.service{
+  display:grid; gap:8px;
+}
+.service .icon{
+  width:44px; height:44px; border-radius:14px; display:grid; place-items:center;
+  background:linear-gradient(135deg, rgba(124,58,237,.18), rgba(34,211,238,.18));
+}
+
+/* Work / Projects */
+.project{
+  display:grid; gap:12px; overflow:hidden; border-radius: var(--radius);
+  border:1px solid rgba(255,255,255,.06); background: var(--card);
+}
+.project-media{
+  position:relative; overflow:hidden; border-radius:18px; margin:10px;
+}
+.project-media img{ width:100%; display:block; aspect-ratio: 16/10; object-fit:cover; border-radius:14px; }
+.project-hover{
+  position:absolute; inset:0; display:flex; align-items:end; justify-content:space-between;
+  padding:18px; border-radius:14px; pointer-events:none;
+  background:linear-gradient(180deg, transparent, rgba(0,0,0,.3) 60%);
+}
+.project-hover .go{
+  display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px;
+  background:rgba(0,0,0,.5); color:white; font-weight:600; opacity:0; transform:translateY(6px);
+  transition: .25s ease;
+}
+.project-media::after{
+  content:""; position:absolute; inset:0; border-radius:14px; box-shadow: inset 0 0 0 0 rgba(124,58,237,.6); transition:.3s ease;
+}
+.project-media:hover .go{ opacity:1; transform:none}
+.project-media:hover::after{ box-shadow: inset 0 0 0 2px rgba(124,58,237,.6)}
+
+.project .meta{ padding:0 18px 18px; color:var(--muted) }
+.project .title{ font-weight:700; font-size:18px; color:var(--text); margin:0 18px}
+
+/* Reviews */
+.review{
+  display:grid; gap:12px; padding:18px; border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.06);
+}
+.stars{ letter-spacing:2px }
+.reviewer{ color:var(--muted)}
+
+/* Contact */
+.form{
+  display:grid; gap:12px; max-width:680px;
+}
+.input, .textarea{
+  width:100%; padding:12px 14px; border-radius:14px;
+  border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03);
+  color:var(--text)
+}
+.input::placeholder, .textarea::placeholder{ color: #93a1b2 }
+.textarea{ min-height:140px; resize:vertical }
+.form .row{ display:grid; gap:12px; grid-template-columns:1fr 1fr}
+@media (max-width:700px){ .form .row{ grid-template-columns:1fr } }
+.form .hint{ color:var(--muted); font-size:14px}
+
+/* Footer */
+.footer{
+  padding:32px 0; color:var(--muted); border-top:1px solid rgba(255,255,255,.06);
+}
+.footer .items{ display:flex; gap:18px; flex-wrap:wrap}
+.footer a{ color:var(--text); text-decoration:none }
+.footer a:hover{ text-decoration:underline }
+
+/* Reveal on scroll */
+.reveal{ opacity:0; transform: translateY(14px); transition: .6s ease}
+.reveal.on{ opacity:1; transform:none}
+
+/* Utility */
+.center{ text-align:center }
+.small{ font-size:14px; color:var(--muted)}
+.hide-mobile{ display:block }
+@media (max-width:700px){ .hide-mobile{ display:none } }
+
+/* Accessibility focus */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:3px solid var(--ring); outline-offset:2px}
